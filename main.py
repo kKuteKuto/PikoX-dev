@@ -21,7 +21,7 @@ def process(latest_version: Version):
 
     download_link: Variant | None = None
     for variant in variants:
-        if variant.is_bundle and (variant.arcithecture == "universal" or variant.arcithecture == "arm64-v8a"):
+        if variant.is_bundle and (variant.arcithecture == "arm64-v8a"):
             download_link = variant
             break
 
@@ -58,8 +58,6 @@ Changelogs:
         [
             f"x-piko-v{latest_version.version}.apk",
             f"x-piko-material-you-v{latest_version.version}.apk",
-            f"twitter-piko-v{latest_version.version}.apk",
-            f"twitter-piko-material-you-v{latest_version.version}.apk",
         ],
         message,
         latest_version.version
@@ -69,7 +67,7 @@ Changelogs:
 def main():
     # get latest version
     url: str = "https://www.apkmirror.com/apk/x-corp/twitter/"
-    repo_url: str = "lluni/twitter-apk"
+    repo_url: str = "kkutekuto/PikoX-dev"
 
     versions = apkmirror.get_versions(url)
 
